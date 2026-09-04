@@ -131,7 +131,17 @@ h1 {
   margin-top: 24px;
 }
 
+.timer-navigation {
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid #d5c2af;
+  text-align: center;
+}
+
 .button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   min-width: 104px;
   min-height: 42px;
   padding: 8px 14px;
@@ -140,6 +150,7 @@ h1 {
   color: #5b210d;
   background: #fffdf8;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .button:hover, .button:focus-visible {

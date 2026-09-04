@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#7c2d12">
+  <title>Countdown Timer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header>
+      <p class="eyebrow">Focus timer</p>
+      <h1>Countdown</h1>
+    </header>
+
+    <section class="timer" aria-label="Countdown timer">
+      <div class="time-inputs" aria-label="Set countdown duration">
+        <label>
+          <span>Minutes</span>
+          <input id="minutes" type="number" min="0" max="999" value="5" inputmode="numeric">
+        </label>
+        <span class="separator" aria-hidden="true">:</span>
+        <label>
+          <span>Seconds</span>
+          <input id="seconds" type="number" min="0" max="59" value="0" inputmode="numeric">
+        </label>
+      </div>
+
+      <output id="display" class="time-display" aria-live="polite">05:00.00</output>
+      <p id="status" class="status" aria-live="polite">Ready</p>
+
+      <div class="controls" aria-label="Countdown controls">
+        <button id="start-pause" class="button button-primary" type="button">Start</button>
+        <button id="reset" class="button" type="button">Reset</button>
+      </div>
+    </section>
+  </main>
+  <p class="shortcuts">Space: start/pause <span aria-hidden="true">|</span> R: reset</p>
+  <script src="app.js"></script>
+</body>
+</html>

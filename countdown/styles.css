@@ -1,0 +1,179 @@
+:root {
+  color: #2e211c;
+  background: #f6f0e6;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  padding: 32px 18px;
+  background-color: #f6f0e6;
+  background-image: linear-gradient(rgba(124, 45, 18, 0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(124, 45, 18, 0.08) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+button, input {
+  font: inherit;
+}
+
+.app-shell {
+  width: min(100%, 620px);
+  padding: clamp(24px, 6vw, 52px);
+  border: 1px solid #d5c2af;
+  border-top: 8px solid #0f766e;
+  background: #fffdf8;
+  box-shadow: 10px 10px 0 #e7d9c8;
+}
+
+header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #d5c2af;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.eyebrow, .shortcuts {
+  margin: 0;
+  color: #8a5b42;
+  font-family: "Courier New", monospace;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+}
+
+.eyebrow {
+  order: 2;
+}
+
+.timer {
+  padding: clamp(32px, 8vw, 64px) 0 12px;
+  text-align: center;
+}
+
+.time-inputs {
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  gap: 10px;
+}
+
+.time-inputs label {
+  display: grid;
+  gap: 6px;
+  color: #8a5b42;
+  font-family: "Courier New", monospace;
+  font-size: 0.7rem;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.time-inputs input {
+  width: 108px;
+  padding: 8px;
+  border: 1px solid #b28c72;
+  border-radius: 4px;
+  color: #5b210d;
+  background: #fffdf8;
+  font-family: "Courier New", monospace;
+  font-size: 1.35rem;
+  text-align: center;
+}
+
+.time-inputs input:focus-visible, .button:focus-visible {
+  outline: 3px solid #0f766e;
+  outline-offset: 2px;
+}
+
+.separator {
+  padding-bottom: 9px;
+  color: #8a5b42;
+  font-family: "Courier New", monospace;
+  font-size: 1.4rem;
+}
+
+.time-display {
+  display: block;
+  margin-top: 30px;
+  color: #7c2d12;
+  font-family: "Courier New", monospace;
+  font-size: clamp(2.8rem, 12vw, 5.5rem);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0;
+}
+
+.status {
+  min-height: 1.3em;
+  margin: 14px 0 0;
+  color: #8a5b42;
+  font-family: "Courier New", monospace;
+  font-size: 0.85rem;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.button {
+  min-width: 104px;
+  min-height: 42px;
+  padding: 8px 14px;
+  border: 1px solid #8a5b42;
+  border-radius: 4px;
+  color: #5b210d;
+  background: #fffdf8;
+  cursor: pointer;
+}
+
+.button:hover, .button:focus-visible {
+  color: #fffdf8;
+  background: #5b210d;
+}
+
+.button-primary {
+  border-color: #7c2d12;
+  color: #fffdf8;
+  background: #7c2d12;
+}
+
+.button-primary:hover, .button-primary:focus-visible {
+  background: #5b210d;
+}
+
+.shortcuts {
+  width: min(100%, 620px);
+  margin: 18px 0 0;
+  text-align: center;
+}
+
+@media (max-width: 420px) {
+  body {
+    padding: 16px;
+  }
+
+  .app-shell {
+    padding: 24px;
+    box-shadow: 6px 6px 0 #e7d9c8;
+  }
+
+  .time-inputs input {
+    width: 92px;
+  }
+}

@@ -13,6 +13,27 @@ let startedAt = 0;
 let running = false;
 let animationFrameId = 0;
 
+function playAlarm() {
+  const audioContext = new AudioContext();
+  const alarmStart = audioContext.currentTime;
+
+  [0, 0.35, 0.7].forEach((offset) => {
+    const oscillator = audioContext.createOscillator();
+    const gain = audioContext.createGain();
+
+    oscillator.type = "square";
+    oscillator.frequency.setValueAtTime(880, alarmStart + offset);
+    gain.gain.setValueAtTime(0.12, alarmStart + offset);
+    gain.gain.exponentialRampToValueAtTime(0.001, alarmStart + offset + 0.22);
+    oscillator.connect(gain);
+    gain.connect(audioContext.destination);
+    oscillator.start(alarmStart + offset);
+    oscillator.stop(alarmStart + offset + 0.22);
+  });
+
+  setTimeout(() => audioContext.close(), 1100);
+}
+
 function durationFromInputs() {
   const minutes = Math.max(0, Number(minutesInput.value) || 0);
   const seconds = Math.min(59, Math.max(0, Number(secondsInput.value) || 0));
@@ -45,6 +66,7 @@ function updateDisplay() {
     remaining = 0;
     startPauseButton.textContent = "Start";
     status.textContent = "Time is up";
+    playAlarm();
   }
 }
 

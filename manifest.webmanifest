@@ -1,0 +1,9 @@
+{
+  "name": "Tracktime Stopwatch",
+  "short_name": "Tracktime",
+  "description": "A simple stopwatch with lap tracking and CSV export.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f5f2e9",
+  "theme_color": "#14532d"
+}

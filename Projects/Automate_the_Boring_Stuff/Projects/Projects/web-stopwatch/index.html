@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#14532d">
+  <title>Tracktime Stopwatch</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header>
+      <p class="eyebrow">Personal timer</p>
+      <h1>Tracktime</h1>
+    </header>
+
+    <section class="stopwatch" aria-label="Stopwatch">
+      <output id="display" class="time-display" aria-live="polite">00:00:00.0</output>
+      <div class="controls" aria-label="Stopwatch controls">
+        <button id="start-stop" class="button button-primary" type="button">Start</button>
+        <button id="lap" class="button" type="button" disabled>Lap</button>
+        <button id="reset" class="button" type="button" disabled>Reset</button>
+      </div>
+    </section>
+
+    <section class="laps-section" aria-labelledby="laps-heading">
+      <div class="section-heading">
+        <h2 id="laps-heading">Laps</h2>
+        <button id="save" class="button button-save" type="button" disabled>Save CSV</button>
+      </div>
+      <p id="empty-laps" class="empty-state">No laps recorded.</p>
+      <ol id="laps" class="lap-list" aria-live="polite"></ol>
+    </section>
+  </main>
+  <p class="shortcuts">Space: start/stop <span aria-hidden="true">|</span> L: lap <span aria-hidden="true">|</span> R: reset</p>
+  <script src="app.js?v=2"></script>
+</body>
+</html>

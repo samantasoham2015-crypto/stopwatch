@@ -125,7 +125,11 @@ resetButton.addEventListener("click", resetStopwatch);
 saveButton.addEventListener("click", saveLaps);
 
 document.addEventListener("keydown", (event) => {
-  if (event.ctrlKey || event.metaKey || event.altKey || event.target.matches("button")) {
+  if (event.ctrlKey || event.metaKey || event.altKey) {
+    return;
+  }
+
+  if (event.code === "Space" && event.target.matches("button")) {
     return;
   }
 
@@ -136,6 +140,8 @@ document.addEventListener("keydown", (event) => {
     addLap();
   } else if (event.key.toLowerCase() === "r") {
     resetStopwatch();
+  } else if (event.key.toLowerCase() === "s" && laps.length > 0) {
+    saveLaps();
   }
 });
 
